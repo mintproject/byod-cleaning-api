@@ -17,18 +17,18 @@ We define and detect three different types of outliers as follows:
 2. Submit a `POST` request with data as follows:
     ```json
     {
-        'table':{
-            'column1': ['val1', 'val2'],
-            'column2': ['val3', 'val4']
+        "table":{
+            "column1": ["val1", "val2"],
+            "column2": ["val3", "val4"]
         }
     }
     ```
 3. Receive response in the form:
     ```json
         {
-            'table':{
-                'column1': ['[[[val1]]]', 'val2'],
-                'column2': ['val3', 'val4']
+            "table":{
+                "column1": ["[[[val1]]]", "val2"],
+                "column2": ["val3", "val4"]
             }
         }
     ```
