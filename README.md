@@ -31,42 +31,7 @@ We define and detect three different types of outliers as follows:
 conda env create -f environment.yml
 conda activate byod
 ```
-2. Run command
+2. For evaluation on demo dataset, run command
 ```
-PYTHONPATH=.:$PYTHONPATH python -m kbclean.main detect --i [input_file] -e [example_file] -o [output_file] --num_gpus [number_of_gpus] 
+PYTHONPATH=.:$PYTHONPATH python kbclean/experiments/error_detection.py evaluate --data_path demo/data  --method lstm  -i -k 2 -e 5
 ```
-
-More details of command can be found by running
-```
-PYTHONPATH=.:$PYTHONPATH python -m kbclean.main detect --help
-```
-
-3. Example files can be found in [demo](demo) folder. 
-
-- Input file: csv format
-- Example file: json format with the following template
-    ```json
-    {
-    "col1": [
-        {
-            "raw": "val1",
-            "cleaned": "val2"
-        },
-        {
-            "raw": "val3",
-            "cleaned": "val4"
-        }
-    ],
-    "col2": [
-        {
-            "raw": "val1",
-            "cleaned": "val2"
-        },
-        {
-            "raw": "val3",
-            "cleaned": "val4"
-        }
-    ]
-    }
-    ```
-- Output file: csv file with outliers annotated as <<<valuez>>>
